@@ -1,13 +1,248 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  list-style-type: none;
+}
+
+button:hover {
+  outline: none;
+}
+
+body {
+  background-color: rgb(51, 51, 51);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.panel {
+  min-height: 70vh;
+  width: 980px;
+  background: white;
+  display: grid;
+  grid-template-columns: 4fr 10fr;
+  border-radius: 10px;
+  /* border: 1px solid rgb(97, 165, 211); */
+}
+
+.left-section {
+  background: linear-gradient(45deg, rgb(110, 48, 255), rgb(121, 187, 248));
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+}
+
+.category-adding {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-plus {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  height: 10px;
+  width: 10px;
+  border: none;
+  background: orange;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.category-plus:focus {
+  outline: none;
+}
+
+.category-new {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  height: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  font-size: 1.2rem;
+}
+.category-new:focus {
+  outline: none;
+}
+
+.categories {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  width: 100%;
+  padding: 15px 10px;
+  background: transparent;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  color: white;
+}
+
+.category:hover {
+  background: linear-gradient(45deg, rgb(110, 48, 255), rgb(121, 187, 248));
+  color: yellow;
+  font-weight: bold;
+}
+
+.category-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name {
+  padding: 0px 10px;
+}
+
+.category-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* right section */
+.right-section,
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.top {
+  padding: 20px 40px 0px 40px;
+}
+
+.main-category {
+  font-size: 2rem;
+  font-weight: bolder;
+  border-bottom: solid 1px blue;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.input-task {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  width: 100%;
+  margin: 20px 0px;
+}
+.input,
+.adding,
+.sorting {
+  padding: 15px 15px;
+  font-size: 1.2rem;
+  border-radius: 0px;
+  border: none;
+  color: white;
+}
+
+.input:focus,
+.adding:focus,
+.sorting:focus {
+  outline: none;
+}
+
+.input {
+  background: linear-gradient(45deg, rgb(110, 48, 255), rgb(121, 187, 248));
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.input::placeholder {
+  color: white;
+  opacity: 0.3;
+}
+
+.adding {
+  background: linear-gradient(45deg, rgb(245, 184, 70), rgb(255, 136, 0));
+  transition: all 0.3s ease-in-out;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.adding:hover {
+  background: linear-gradient(45deg, rgb(255, 136, 0), rgb(245, 184, 70));
+}
+
+/* items */
+.items {
+  height: 100%;
+  width: 100%;
+  padding: 20px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 15fr 1fr 1fr;
+  padding: 10px 10px;
+  background: linear-gradient(45deg, rgb(110, 48, 255), rgb(121, 187, 248));
+  margin-bottom: 2px;
+  border-radius: 3px;
+}
+
+.checked,
+.importance,
+.delete {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  background: white;
+}
+
+.checked:focus {
+  outline: none;
+}
+
+.task {
+  padding: 5px 5px 5px 5px;
+  color: white;
+}
+
+.importance:hover {
+  color: yellow;
+  background: linear-gradient(45deg, rgb(110, 48, 255), rgb(121, 187, 248));
+}
+
+.delete:hover {
+  color: white;
+  background: red;
+}
+
+.checked:hover {
+  color: yellow;
+  background-color: rgb(93, 185, 39);
 }
